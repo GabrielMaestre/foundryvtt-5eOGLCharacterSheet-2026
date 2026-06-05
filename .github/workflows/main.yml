@@ -4,6 +4,13 @@ on:
   push:
     tags:
       - 'v*'
+  release:
+    types:
+      - published
+  workflow_dispatch:
+
+permissions:
+  contents: write
 
 jobs:
   build:
@@ -46,6 +53,8 @@ jobs:
       - name: Create Release
         id: create_version_release
         uses: ncipollo/release-action@v1
+        env:
+          RELEASE_TAG: ${{ github.event.release.tag_name || github.ref_name }}
         with:
           allowUpdates: true # set this to false if you want to prevent updating existing releases
           name: ${{ steps.get-version.outputs.version }}
@@ -55,7 +64,7 @@ jobs:
           prerelease: false
           token: ${{ secrets.GITHUB_TOKEN }}
           artifacts: './dist/module.json,./dist/module.zip'
-          tag: ${{ github.ref_name }}
+          tag: ${{ env.RELEASE_TAG }}
 
       # Update the 'latest' release
       - name: Create Release
