@@ -1,6 +1,6 @@
 {{!-- Sheet Header --}}
 <header class="sheet-header">
-  {{> "systems/dnd5e/templates/actors/parts/actor-warnings.html"}}
+  {{> "systems/dnd5e/templates/actors/parts/actor-warnings.hbs"}}
 
   <h1>
     <input name="name" type="text" value="{{actor.name}}" placeholder="{{ localize 'DND5E.Name' }}" />
@@ -13,13 +13,11 @@
       <small>{{ localize "DND5E.ItemTypeClass" }} & {{ localize "DND5E.Level" }}</small>
     </li>
     <li class="background">
-      <input type="text" name="system.details.background" value="{{system.details.background}}"
-        placeholder="{{ localize 'DND5E.Background' }}" />
+      <span class="non-editable">{{backgroundDisplay}}</span>
       <small><label>{{ localize 'DND5E.Background' }}</label></small>
     </li>
     <li class="race">
-      <input type="text" name="system.details.race" value="{{system.details.race}}"
-        placeholder="{{ localize 'DND5E.Race' }}" />
+      <span class="non-editable">{{raceDisplay}}</span>
       <small><label>{{ localize 'DND5E.Race' }}</label></small>
     </li>
     <li class="alignment">
@@ -39,8 +37,8 @@
 
 <div class="header-actions">
   <div class="rest-buttons">
-    <a class="rest short-rest">{{ localize 'DND5E.RestS' }}<i class="fas fa-hourglass-half"></i></a>
-    <a class="rest long-rest">{{ localize 'DND5E.RestL' }}<i class="fas fa-hourglass-end"></i></a>
+    <a class="rest short-rest" data-action="rest" data-type="short">{{ localize 'DND5E.RestS' }}<i class="fas fa-hourglass-half"></i></a>
+    <a class="rest long-rest" data-action="rest" data-type="long">{{ localize 'DND5E.RestL' }}<i class="fas fa-hourglass-end"></i></a>
   </div>
 
   {{!-- NPC Sheet Navigation --}}

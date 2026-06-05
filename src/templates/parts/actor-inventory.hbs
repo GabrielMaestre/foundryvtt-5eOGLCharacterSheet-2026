@@ -71,7 +71,7 @@
 
       {{#if (and @root/owner @root/settingsShowEquipInventory)}}
       <div class="item-controls item-equipped-controls">
-        <a class="item-control item-toggle {{item.toggleClass}}" title='{{item.toggleTitle}}'><i
+        <a class="item-control item-toggle {{item.toggleClass}}" data-toggle-type="{{item.toggleType}}" title='{{item.toggleTitle}}'><i
             class="far fa-{{#if item.system.equipped}}check-{{/if}}square"></i></a>
       </div>
       {{/if}}
@@ -124,7 +124,7 @@
       {{#if @root/owner}}
       <div class="item-controls main-item-controls">
         {{#unless @root/settingsShowEquipInventory}}
-        <a class="item-control item-toggle {{item.toggleClass}}" title='{{item.toggleTitle}}'><i
+        <a class="item-control item-toggle {{item.toggleClass}}" data-toggle-type="{{item.toggleType}}" title='{{item.toggleTitle}}'><i
             class="fas fa-shield-alt"></i></a>
         {{/unless}}
         <a class="item-control item-edit" title='{{localize "DND5E.ItemEdit"}}'><i class="fas fa-edit"></i></a>

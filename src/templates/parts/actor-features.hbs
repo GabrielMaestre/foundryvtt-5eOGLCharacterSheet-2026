@@ -123,7 +123,7 @@
       {{#if @root/owner}}
       <div class="item-controls main-item-controls">
         {{#if section.crewable}}
-        <a class="item-control item-toggle {{item.toggleClass}}" title="{{item.toggleTitle}}">
+        <a class="item-control item-toggle {{item.toggleClass}}" data-toggle-type="{{item.toggleType}}" title="{{item.toggleTitle}}">
           <i class="fas fa-sun"></i>
         </a>
         {{/if}}

@@ -25,8 +25,8 @@
           title="{{ localize 'DND5E.Proficiency' }}">{{{ability.icon}}}</a>
         <span class="skill-mod" title="Saving Throw">{{numberFormat ability.save decimals=0 sign=true}}</span>
         <div class="skill-name-controls">
-          <h4 class="saving-throw-name rollable">{{ability.label}}</h4>
-          {{#if @root/systemFeatures.attributeConfig}}<a class="config-button" data-action="ability"
+          <h4 class="saving-throw-name saving-throw rollable" data-action="roll" data-type="ability">{{ability.label}}</h4>
+          {{#if @root/systemFeatures.attributeConfig}}<a class="config-button" data-action="showConfiguration" data-config="ability"
             title="{{localize 'DND5E.AbilityConfigure'}}"><i class="fas fa-cog"></i></a>{{/if}}
         </div>
       </li>
@@ -39,16 +39,16 @@
     <h3 class="box-title">Skills</h3>
     <ul class="skills-list">
       {{#each system.skills as |skill s|}}
-      <li class="skill flexrow {{#if skill.value}}proficient{{/if}}" data-skill="{{s}}">
+      <li class="skill flexrow {{#if skill.value}}proficient{{/if}}" data-skill="{{s}}" data-key="{{s}}">
         <input type="hidden" name="system.skills.{{s}}.value" value="{{skill.baseValue}}" data-dtype="Number" />
         <a class="proficiency-toggle skill-proficiency" title="{{skill.hover}}">{{{skill.icon}}}</a>
         <span class="skill-mod">{{numberFormat skill.total decimals=0 sign=true}}</span>
         <div class="skill-name-controls">
-          <h4 class="skill-name rollable">
+          <h4 class="skill-name rollable" data-action="roll" data-type="skill">
             {{skill.label}}
             <span class="skill-ability">{{skill.ability}}</span>
           </h4>
-          {{#if @root/systemFeatures.skillConfig}}<a class="config-button" data-action="skill"
+          {{#if @root/systemFeatures.skillConfig}}<a class="config-button" data-action="showConfiguration" data-config="skill"
             title="{{localize 'DND5E.SkillConfigure'}}"><i class="fas fa-cog"></i></a>{{/if}}
         </div>
       </li>

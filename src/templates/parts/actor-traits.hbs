@@ -25,7 +25,7 @@
   <div class="form-group {{#if (and (eq system.traits.senses '') (ogl5e-sheet-isEmpty senses))}}inactive{{/if}}">
     <label>{{localize "DND5E.Senses"}}</label>
     {{#if senses}}
-    <a class="config-button" data-action="senses" title="{{localize 'DND5E.SensesConfig'}}">
+    <a class="config-button" data-action="showConfiguration" data-config="senses" title="{{localize 'DND5E.SensesConfig'}}">
       <i class="fas fa-edit"></i>
     </a>
     {{> possiblyNoneList list=senses}}
@@ -37,7 +37,7 @@
 
   <div class="form-group {{system.traits.languages.cssClass}}">
     <label>{{localize "DND5E.Languages"}}</label>
-    <a class="trait-selector" data-options="languages" data-target="system.traits.languages">
+    <a class="trait-selector" data-action="showConfiguration" data-trait="languages">
       <i class="fas fa-edit"></i>
     </a>
     {{> possiblyNoneList list=system.traits.languages.selected}}
@@ -45,7 +45,7 @@
 
   <div class="form-group {{system.traits.di.cssClass}}">
     <label>{{localize "DND5E.DamImm"}}</label>
-    <a class="trait-selector" data-options="damageResistanceTypes" data-target="system.traits.di">
+    <a class="trait-selector" data-action="showConfiguration" data-trait="di">
       <i class="fas fa-edit"></i>
     </a>
     {{> possiblyNoneList list=system.traits.di.selected}}
@@ -53,7 +53,7 @@
 
   <div class="form-group {{system.traits.dr.cssClass}}">
     <label>{{localize "DND5E.DamRes"}}</label>
-    <a class="trait-selector" data-options="damageResistanceTypes" data-target="system.traits.dr">
+    <a class="trait-selector" data-action="showConfiguration" data-trait="dr">
       <i class="fas fa-edit"></i>
     </a>
     {{> possiblyNoneList list=system.traits.dr.selected}}
@@ -61,7 +61,7 @@
 
   <div class="form-group {{system.traits.dv.cssClass}}">
     <label>{{localize "DND5E.DamVuln"}}</label>
-    <a class="trait-selector" data-options="damageResistanceTypes" data-target="system.traits.dv">
+    <a class="trait-selector" data-action="showConfiguration" data-trait="dv">
       <i class="fas fa-edit"></i>
     </a>
     {{> possiblyNoneList list=system.traits.dv.selected}}
@@ -69,7 +69,7 @@
 
   <div class="form-group {{system.traits.ci.cssClass}}">
     <label>{{localize "DND5E.ConImm"}}</label>
-    <a class="trait-selector" data-options="conditionTypes" data-target="system.traits.ci">
+    <a class="trait-selector" data-action="showConfiguration" data-trait="ci">
       <i class="fas fa-edit"></i>
     </a>
     {{> possiblyNoneList list=system.traits.ci.selected}}
@@ -78,7 +78,7 @@
   {{#if isCharacter}}
   <div class="form-group {{system.traits.weaponProf.cssClass}}">
     <label>{{localize "DND5E.TraitWeaponProf"}}</label>
-    <a class="proficiency-selector" data-type="weapon" data-target="system.traits.weaponProf">
+    <a class="proficiency-selector" data-action="showConfiguration" data-trait="weapon">
       <i class="fas fa-edit"></i>
     </a>
     {{> possiblyNoneList list=system.traits.weaponProf.selected}}
@@ -86,7 +86,7 @@
 
   <div class="form-group {{system.traits.armorProf.cssClass}}">
     <label>{{localize "DND5E.TraitArmorProf"}}</label>
-    <a class="proficiency-selector" data-type="armor" data-target="system.traits.armorProf">
+    <a class="proficiency-selector" data-action="showConfiguration" data-trait="armorProf">
       <i class="fas fa-edit"></i>
     </a>
     {{> possiblyNoneList list=system.traits.armorProf.selected}}
@@ -94,7 +94,7 @@
 
   <div class="form-group {{system.traits.toolProf.cssClass}}">
     <label>{{localize "DND5E.TraitToolProf"}}</label>
-    <a class="proficiency-selector" data-type="tool" data-target="system.traits.toolProf">
+    <a class="proficiency-selector" data-action="showConfiguration" data-trait="tool">
       <i class="fas fa-edit"></i>
     </a>
     {{> possiblyNoneList list=system.traits.toolProf.selected}}
@@ -104,8 +104,6 @@
   {{#unless isVehicle}}
   <div class="form-group ">
     <label>{{localize "DND5E.SpecialTraits"}}</label>
-    <a class="configure-flags config-button" data-action="flags" title="{{localize 'DND5E.SpecialTraits'}}"><i
-        class="fas fa-cog"></i></a>
   </div>
   {{/unless}}
 </section>

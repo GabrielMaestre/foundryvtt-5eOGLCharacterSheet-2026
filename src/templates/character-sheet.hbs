@@ -1,4 +1,4 @@
-<form class="{{cssClass}} flexcol" autocomplete="off">
+<div class="ogl5e-sheet-root flexcol">
 
   {{> (ogl5e-sheet-path "templates/parts/sheet-header.hbs")}}
 
@@ -15,13 +15,13 @@
               <div class="ability-outline">
                 {{> (ogl5e-sheet-path "assets/strength.hbs")}}
               </div>
-              <h4 class="ability-name box-title rollable">{{ability.label}}</h4>
+              <h4 class="ability-name box-title rollable" data-action="roll" data-type="ability">{{ability.label}}</h4>
               <input class="ability-score" name="system.abilities.{{id}}.value" type="text" value="{{ability.value}}"
                 data-dtype="Number" placeholder="10" />
               <div class="ability-modifiers flexrow">
                 <span class="ability-mod" title="Modifier">{{numberFormat ability.mod decimals=0 sign=true}}</span>
               </div>
-              {{#if @root/systemFeatures.attributeConfig}}<a class="config-button" data-action="ability"
+              {{#if @root/systemFeatures.attributeConfig}}<a class="config-button" data-action="showConfiguration" data-config="ability"
                 title="{{localize 'DND5E.AbilityConfigure'}}"><i class="fas fa-cog"></i></a>{{/if}}
             </li>
             {{/each}}
@@ -120,7 +120,7 @@
 
     {{!-- Effects Tab --}}
     <article class="tab effects flexcol" data-group="primary" data-tab="effects">
-      {{> "systems/dnd5e/templates/actors/parts/active-effects.html"}}
+      {{> "systems/dnd5e/templates/actors/tabs/actor-effects.hbs"}}
     </article>
 
     {{!-- Biography Tab --}}
@@ -143,4 +143,4 @@
 
     </article>
   </main>
-</form>
+</div>
