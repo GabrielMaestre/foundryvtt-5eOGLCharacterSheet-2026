@@ -76,12 +76,12 @@
 		"minimum": "13.347",
 		"verified": "14"
 	},
-	"bugs": "https://github.com/ElfFriend-DnD/foundryvtt-5eOGLCharacterSheet/issues",
-	"changelog": "https://github.com/ElfFriend-DnD/foundryvtt-5eOGLCharacterSheet/releases",
-	"download": "https://github.com/ElfFriend-DnD/foundryvtt-5eOGLCharacterSheet/releases/download/v0.14.1/module.zip",
-	"manifest": "https://github.com/ElfFriend-DnD/foundryvtt-5eOGLCharacterSheet/releases/latest/download/module.json",
-	"readme": "https://raw.githubusercontent.com/ElfFriend-DnD/foundryvtt-5eOGLCharacterSheet/master/README.md",
-	"url": "https://github.com/ElfFriend-DnD/foundryvtt-5eOGLCharacterSheet",
+	"bugs": "https://github.com/GabrielMaestre/foundryvtt-5eOGLCharacterSheet-2026/issues",
+	"changelog": "https://github.com/GabrielMaestre/foundryvtt-5eOGLCharacterSheet-2026/releases",
+	"download": "https://github.com/GabrielMaestre/foundryvtt-5eOGLCharacterSheet-2026/releases/download/v0.14.1/module.zip",
+	"manifest": "https://github.com/GabrielMaestre/foundryvtt-5eOGLCharacterSheet-2026/releases/latest/download/module.json",
+	"readme": "https://raw.githubusercontent.com/GabrielMaestre/foundryvtt-5eOGLCharacterSheet-2026/master/README.md",
+	"url": "https://github.com/GabrielMaestre/foundryvtt-5eOGLCharacterSheet-2026",
 	"flags": {
 		"allowBugReporter": true
 	},
